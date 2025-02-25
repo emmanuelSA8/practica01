@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Árbol</title>
+</head>
+<body>
+    <h1>Agregar un Nuevo Árbol</h1>
+    
+    <form th:action="@{/arboles/guardar}" th:object="${arbol}" method="post">
+        <input type="hidden" th:field="*{idArbol}" />
+
+        <label>Nombre:</label>
+        <input type="text" th:field="*{nombre}" required /><br>
+
+        <label>Especie:</label>
+        <input type="text" th:field="*{especie}" required /><br>
+
+        <label>Altura:</label>
+        <input type="number" th:field="*{altura}" /><br>
+
+        <label>Edad:</label>
+        <input type="number" th:field="*{edad}" /><br>
+
+        <label>Diámetro:</label>
+        <input type="number" th:field="*{diametro}" /><br>
+
+        <label>Dureza:</label>
+        <input type="text" th:field="*{dureza}" /><br>
+
+        <button type="submit">Guardar Árbol</button>
+    </form>
+
+    <br>
+    <a href="/arboles">Volver a la Lista</a>
+</body>
+</html>

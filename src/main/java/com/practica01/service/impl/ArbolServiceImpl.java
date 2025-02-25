@@ -14,7 +14,6 @@ public class ArbolServiceImpl implements ArbolService {
     @Autowired
     private ArbolDao arbolDao;
 
-
     @Override
     @Transactional(readOnly = true)
     public List<Arbol> findAll() {
@@ -38,5 +37,4 @@ public class ArbolServiceImpl implements ArbolService {
     public void delete(Long id) {
         arbolDao.deleteById(id);
     }
-    
 }
